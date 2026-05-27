@@ -7,8 +7,8 @@
  */
 
 var SheetsDAO = (function() {
-  // Configuration - REPLACE THIS WITH YOUR SPREADSHEET ID
-  var SPREADSHEET_ID = 'YOUR_SPREADSHEET_ID_HERE';
+  // Configuration - Spreadsheet ID
+  var SPREADSHEET_ID = '1j7DISyMX6GksSjqBV3pYTb5xpX8Uq-8a4g-pyWuJLRg';
 
   // Cache for frequently accessed data
   var cache = CacheService.getScriptCache();
