@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><?= appName ?> - Tutor Portal</title>
+
+  <!-- Materialize CSS from CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: #f5f5f5;
+    }
+    .container {
+      margin-top: 20px;
+    }
+    .header {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      padding: 30px 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .card {
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .via-hours {
+      font-size: 3em;
+      font-weight: bold;
+      color: #f5576c;
+    }
+    .badge-role {
+      background-color: #f5576c;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.85em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h3><?= appName ?></h3>
+      <h5>Tutor Portal</h5>
+      <p>Welcome, <strong><?= user.name ?></strong>! <span class="badge-role"><?= user.role ?></span></p>
+      <p><i class="material-icons tiny">email</i> <?= user.email ?></p>
+    </div>
+
+    <!-- VIA Hours Card -->
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-content center-align">
+            <span class="card-title">Your VIA Hours</span>
+            <div class="via-hours">0</div>
+            <p class="grey-text">Total volunteer hours earned</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-content center-align">
+            <span class="card-title">Sessions Completed</span>
+            <div class="via-hours">0</div>
+            <p class="grey-text">Total tutoring sessions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- My Matches -->
+    <div class="row">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title"><i class="material-icons">group</i> My Tutees</span>
+            <p>No active matches yet. You'll see your assigned tutees here once the admin approves matches.</p>
+            <br>
+            <p><strong>MVP Status:</strong> ✅ Authentication and role-based access working!</p>
+            <p><strong>Next Phase:</strong> View your matches, set availability, submit session evidence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Info -->
+    <div class="row">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title"><i class="material-icons">person</i> Your Profile</span>
+            <table class="striped">
+              <tbody>
+                <tr>
+                  <td><strong>Name:</strong></td>
+                  <td><?= user.name ?></td>
+                </tr>
+                <tr>
+                  <td><strong>Email:</strong></td>
+                  <td><?= user.email ?></td>
+                </tr>
+                <tr>
+                  <td><strong>School:</strong></td>
+                  <td><?= user.school ?></td>
+                </tr>
+                <tr>
+                  <td><strong>Phone:</strong></td>
+                  <td><?= user.phone ?></td>
+                </tr>
+                <tr>
+                  <td><strong>Status:</strong></td>
+                  <td><span class="green-text">Active</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      M.AutoInit();
+    });
+  </script>
+
+</body>
+</html>
